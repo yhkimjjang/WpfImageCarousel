@@ -8,11 +8,7 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <Image>
-                            <Image.Source>
-                                <BitmapImage UriSource="{Binding ImagePath}"/>
-                            </Image.Source>
-                        </Image>
+                        <Image Source="{Binding ImagePath}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
