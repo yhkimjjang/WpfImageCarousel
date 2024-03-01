@@ -1,0 +1,25 @@
+<mxfile host="Electron" modified="2024-02-28T20:17:47.635Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="PtjcPvsc7ExE-MFOg9Ej" version="22.1.2" type="device">
+  <diagram name="페이지-1" id="gHPTPA0mW_sgoDCJeqlO">
+    <mxGraphModel dx="795" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lqN978QFO47gXTVzPocn-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="200" width="140" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lqN978QFO47gXTVzPocn-1" value="ImageManger" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="120" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lqN978QFO47gXTVzPocn-2" value="RESTfull" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lqN978QFO47gXTVzPocn-3" value="Socket" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lqN978QFO47gXTVzPocn-5" value="통신 모듈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
