@@ -8,7 +8,7 @@ namespace WpfImageCarousel.Main.Local.ViewModels;
 public partial class WpfImageCarouselMainViewViewModel : ObservableObject
 {
     private ImageInfoManager _imageInfoManger;    
-    private DispatcherTimer _timer;
+    private RollingTimer _rollingTimer;
 
     [ObservableProperty]
     private string imagePath;
@@ -17,11 +17,14 @@ public partial class WpfImageCarouselMainViewViewModel : ObservableObject
     /// 생성자
     /// </summary>
     /// <param name="imageInfoManger"></param>
-    public WpfImageCarouselMainViewViewModel(ImageInfoManager imageInfoManger)
+    /// <param name="rollingTimer"></param>
+    public WpfImageCarouselMainViewViewModel(ImageInfoManager imageInfoManger, RollingTimer rollingTimer)
     {
         _imageInfoManger = imageInfoManger;
+        _rollingTimer = rollingTimer;
+
         InitialImagePath();
-        InitialTimer();
+        StartTimer();
     }
 
     /// <summary>
@@ -37,14 +40,13 @@ public partial class WpfImageCarouselMainViewViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Timer 초기화
+    /// 이미지 롤링 Timer 시작함
     /// </summary>
-    private void InitialTimer()
+    private void StartTimer()
     {
-        _timer = new DispatcherTimer();
-        _timer.Interval = TimeSpan.FromSeconds(20);
-        _timer.Tick += ChangeImageTimer;
-        _timer.Start();
+        _rollingTimer.AddRollingTimer(TimeSpan.FromSeconds(10));
+        _rollingTimer.AddEventHander(ChangeImageTimer);
+        _rollingTimer.Start();
     }
 
     /// <summary>

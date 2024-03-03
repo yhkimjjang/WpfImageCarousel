@@ -15,5 +15,6 @@ public class HelperModules : IModule
     {
         containerRegistry.RegisterSingleton<IImageLoder, LocalImageLoader>();
         containerRegistry.RegisterSingleton<ImageInfoManager>();
+        containerRegistry.Register<RollingTimer>();
     }
 }
