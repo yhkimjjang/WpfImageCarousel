@@ -13,7 +13,8 @@ public class HelperModules : IModule
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        containerRegistry.RegisterSingleton<IImageLoder, LocalImageLoader>();
+        containerRegistry.RegisterInstance<IImageLoder>(new LocalImageLoader());
+        //containerRegistry.RegisterSingleton<IImageLoder, LocalImageLoader>();
         containerRegistry.RegisterSingleton<ImageInfoManager>();
         containerRegistry.Register<RollingTimer>();
     }

@@ -1,4 +1,6 @@
 ﻿using KimRobote.Wpf.Local.Application;
+using WpfImageCarousel.Bottom.Local.ViewModels;
+using WpfImageCarousel.Bottom.UI.Views;
 using WpfImageCarousel.Forms.Local.ViewModels;
 using WpfImageCarousel.Forms.UI.Views;
 using WpfImageCarousel.Main.Local.ViewModels;
@@ -15,5 +17,6 @@ internal class WireDataContext : KimRoboteViewModelLocator
     {
         collection.Register<WpfImageCarouselViewViewModel>(typeof(WpfImageCarouselView));
         collection.Register<MainViewViewModel>(typeof(MainView));
+        collection.Register<BottomViewViewModel>(typeof(BottomView));
     }
 }

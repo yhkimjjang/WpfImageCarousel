@@ -9,7 +9,7 @@ namespace WpfImageCarousel.Support.Test.Local.Helper;
 
 internal class ImageInfoManagerTest
 {
-    private IImageLoder _loder;
+    private LocalImageLoader _loder;
     private ImageInfoManager? _imageInfoManager;
 
     [SetUp]
