@@ -2,5 +2,6 @@
 
 public enum RegionNames
 {
-    WpfImageCarouselMainView = 0,
+    MainView = 0,
+    BottomView,
 }

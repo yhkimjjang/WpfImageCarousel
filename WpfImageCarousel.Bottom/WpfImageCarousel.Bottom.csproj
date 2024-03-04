@@ -8,14 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="Prism.Unity" Version="8.1.97" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Kimrobote.Wpf\KimRobote.Wpf.csproj" />
-    <ProjectReference Include="..\WpfImageCarousel.Bottom\WpfImageCarousel.Bottom.csproj" />
-    <ProjectReference Include="..\WpfImageCarousel.Main\WpfImageCarousel.Main.csproj" />
     <ProjectReference Include="..\WpfImageCarousel.Support\WpfImageCarousel.Support.csproj" />
   </ItemGroup>
 

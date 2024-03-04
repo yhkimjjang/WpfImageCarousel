@@ -1,6 +1,7 @@
 ﻿using Kimrobote.Wpf.Local.Views;
 using Prism.Ioc;
 using Prism.Regions;
+using WpfImageCarousel.Bottom.UI.Views;
 using WpfImageCarousel.Main.UI.Views;
 using WpfImageCarousel.Support.Enums;
 
@@ -19,7 +20,8 @@ public class WpfImageCarouselViewViewModel : IViewLoadable
 
     public void OnLoaded(IViewable view)
     {
-        ImportContent<WpfImageCarouselMainView>(RegionNames.WpfImageCarouselMainView.ToString());
+        ImportContent<MainView>(RegionNames.MainView.ToString());
+        ImportContent<BottomView>(RegionNames.BottomView.ToString());
     }
 
     private void ImportContent<TViewType>(string regionName)

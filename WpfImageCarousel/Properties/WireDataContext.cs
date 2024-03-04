@@ -14,6 +14,6 @@ internal class WireDataContext : KimRoboteViewModelLocator
     protected override void Match(KimRoboteViewModelCollection collection)
     {
         collection.Register<WpfImageCarouselViewViewModel>(typeof(WpfImageCarouselView));
-        collection.Register<WpfImageCarouselMainViewViewModel>(typeof(WpfImageCarouselMainView));
+        collection.Register<MainViewViewModel>(typeof(MainView));
     }
 }

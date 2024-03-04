@@ -5,7 +5,7 @@ using WpfImageCarousel.Support.Local.Models;
 
 namespace WpfImageCarousel.Main.Local.ViewModels;
 
-public partial class WpfImageCarouselMainViewViewModel : ObservableObject
+public partial class MainViewViewModel : ObservableObject
 {
     private ImageInfoManager _imageInfoManger;    
     private RollingTimer _rollingTimer;
@@ -18,7 +18,7 @@ public partial class WpfImageCarouselMainViewViewModel : ObservableObject
     /// </summary>
     /// <param name="imageInfoManger"></param>
     /// <param name="rollingTimer"></param>
-    public WpfImageCarouselMainViewViewModel(ImageInfoManager imageInfoManger, RollingTimer rollingTimer)
+    public MainViewViewModel(ImageInfoManager imageInfoManger, RollingTimer rollingTimer)
     {
         _imageInfoManger = imageInfoManger;
         _rollingTimer = rollingTimer;
