@@ -16,4 +16,9 @@
     <ProjectReference Include="..\WpfImageCarousel.Support\WpfImageCarousel.Support.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Themes\Units\" />
+    <Folder Include="UI\Units\" />
+  </ItemGroup>
+
 </Project>

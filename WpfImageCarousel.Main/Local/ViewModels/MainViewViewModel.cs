@@ -25,6 +25,18 @@ public partial class MainViewViewModel : ObservableObject
 
         // EventAgreator가 전달하는 이벤트 Subscribe
         ea.GetEvent<ImageChangedEvent>().Subscribe(ChangeImagePath);
+        ea.GetEvent<ImageDirectoryChangedEvent>().Subscribe(ChangeDirectoryPath);
+    }
+
+    /// <summary>
+    /// 이미지 디렉토리를 변경 했을 때 이벤트 처리
+    /// </summary>
+    /// <param name="root"></param>
+    private void ChangeDirectoryPath(string root)
+    {
+        _imageInfoManger.ImageRoot = root;
+        _imageInfoManger.InitImageInfos();
+        InitialImagePath();
     }
 
     /// <summary>

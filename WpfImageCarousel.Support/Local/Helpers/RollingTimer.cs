@@ -42,6 +42,9 @@ public class RollingTimer
         if (_timer.Interval == TimeSpan.Zero)
             throw new ArgumentException("Rolling Timer not Intervla");
 
+        if (_timer.IsEnabled)
+            return;
+
         _timer.Start();
     }
 

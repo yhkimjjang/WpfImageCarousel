@@ -9,8 +9,8 @@ namespace WpfImageCarousel.Support.Local.Helpers;
 public class ImageInfoManager
 {
     private readonly LocalImageLoader _imageLoader;
-    private IList<ImageInfo>? _imageInfos;
     private int _imageIndex;
+    private IList<ImageInfo>? _imageInfos;
     
     /// <summary>
     /// 생성자
@@ -19,27 +19,43 @@ public class ImageInfoManager
     public ImageInfoManager(LocalImageLoader imageLoader)
     {
         _imageLoader = imageLoader;
-        InitImageInfos().Wait();
+        InitialImageRoot().Wait();
+        InitImageInfos();
+    }
 
+    public int TotalImageCount { get; private set; }
+
+    public string ImageRoot { get; set; }
+
+    /// <summary>
+    /// Image Root 초기화
+    /// </summary>
+    /// <returns></returns>
+    private async Task InitialImageRoot()
+    {
+        ImageRoot = await _imageLoader.DownloadImagesToStringPathAsync();
+    }
+
+    /// <summary>
+    /// Image 출력 순서를 초기화 시킴
+    /// </summary>
+    private void InitialImageOrder()
+    {
         _imageIndex = -1;
         TotalImageCount = _imageInfos!.Count;
     }
 
-    public int TotalImageCount { get; init; }
-
     /// <summary>
-    /// ImageInfo 데이터들을 만듬
+    /// ImageInfo 데이터 생성 
     /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
-    private async Task InitImageInfos() 
-    {
-        string imageRoot = await _imageLoader.DownloadImagesToStringPathAsync();
-        if (Directory.Exists(imageRoot) == false)
+    public void InitImageInfos() 
+    {   
+        if (Directory.Exists(ImageRoot) == false)
         {
-            Directory.CreateDirectory(imageRoot);
+            Directory.CreateDirectory(ImageRoot);
         }
         
-        _imageInfos = Directory.GetFileSystemEntries(imageRoot)
+        _imageInfos = Directory.GetFileSystemEntries(ImageRoot)
             .Select(entry => new ImageInfo
             {
                 Name = Path.GetFileName(entry),
@@ -47,6 +63,8 @@ public class ImageInfoManager
                 LocalPath = entry
             })
             .ToList();
+
+        InitialImageOrder();
     }
 
     /// <summary>

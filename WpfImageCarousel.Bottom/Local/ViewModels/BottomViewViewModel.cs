@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using Microsoft.Win32;
 using Prism.Events;
 using System.Windows;
 using WpfImageCarousel.Support.Events;
@@ -24,7 +25,7 @@ public partial class BottomViewViewModel
     /// </summary>
     private void InitialRollingTimer()
     {
-        _rollingTimer.AddRollingTimer(TimeSpan.FromSeconds(10));
+        _rollingTimer.AddRollingTimer(TimeSpan.FromSeconds(5));
         _rollingTimer.AddEventHander(TickRollingTimer);
     }
 
@@ -58,11 +59,18 @@ public partial class BottomViewViewModel
 
     /// <summary>
     /// 폴더 선택 이벤트 처리
+    /// <br/> 폴더를 선택시 폴더명을 Publish 함.
     /// </summary>
     [RelayCommand]
     private void SearchLocalImageFolder()
     {
-        Console.WriteLine("SearchLocalImageFolder");
+        var dialog = new OpenFolderDialog();
+        var result = dialog.ShowDialog();
+        if(result == true)
+        {
+            string name = dialog.FolderName;
+            _eventAggregator.GetEvent<ImageDirectoryChangedEvent>().Publish(name);
+        }
     }
 
     /// <summary>

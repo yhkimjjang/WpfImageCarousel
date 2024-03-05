@@ -8,7 +8,7 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <Image Source="{Binding ImagePath}"/>
+                        <Image Margin="0 5 0 0" Source="{Binding ImagePath}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
